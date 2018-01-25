@@ -1,0 +1,16 @@
+{% extends "ifsearch/base.html" %}
+{% block title %} Home Page {% endblock %}
+{% load static %}
+{% block content %}
+<div id="container">
+    <form action="{% url 'ifsearch:query' %}" method="get">
+        <input type="text" name="journal">
+        <select name="year">
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="All">All Year</option>
+        </select>
+        <input type="submit" value="Search">
+    </form>
+</div>
+{% endblock %}

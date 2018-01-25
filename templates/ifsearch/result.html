@@ -1,0 +1,27 @@
+{% extends "ifsearch/base.html" %}
+{% block title %} Result {% endblock %}
+{% load static %}
+{% block content %}
+<div id="back" style=" width: 400px;margin-left: 50px;margin-bottom: 20px;">
+    <button onclick="window.location.href = '{% url "ifsearch:index" %}'"
+            style="border: 2px solid green; width: 400px;height: 50px; line-height: 50px; font-size: 30px;">Back</button>
+</div>
+
+
+
+<div id="container" style="width: 400px;margin-left: 50px;margin-right: auto; border: 2px solid green;">
+    <div id="inner" style="margin-left: 50px; margin-right: 50px">
+    {% if info == 'success' %}
+    <div><label>IF for Journal:</label><div style="margin-left: 10px;color: red;">{{ journal }}</div></div>
+    {% else %}
+    <div style="color: red;">{{ info }}</div>
+    {% endif %}
+    {%  for i in ifs %}
+        <div style="margin-top: 20px;">{{ i.journal }}</div>
+        <div><span style="margin-left: 15px;">{{ i.year }}:</span><span style="color:red;margin-left: 10px;">{{ i.iff }}</span></div>
+
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
