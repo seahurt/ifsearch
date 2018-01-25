@@ -1,7 +1,8 @@
 import os
 import django
-pwd = os.getcwd()
-os.chdir('..')
+pwd = os.path.abspath(os.getcwd())
+root = os.path.dirname(pwd)
+os.chdir(root)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'IF.settings'
 django.setup()
 os.chdir(pwd)
