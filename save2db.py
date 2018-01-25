@@ -1,7 +1,10 @@
 import os
 import django
+pwd = os.getcwd()
+os.chdir('..')
 os.environ['DJANGO_SETTINGS_MODULE'] = 'IF.settings'
 django.setup()
+os.chdir(pwd)
 from models import If
 
 
