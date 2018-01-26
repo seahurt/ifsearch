@@ -2,14 +2,15 @@
 {% block title %} Result {% endblock %}
 {% load static %}
 {% block content %}
-<div id="back" style=" width: 400px;margin-left: 50px;margin-bottom: 20px;">
-    <button onclick="window.location.href = '{% url "ifsearch:index" %}'"
-            style="border: 2px solid green; width: 400px;height: 50px; line-height: 50px; font-size: 30px;">Back</button>
-</div>
 
 
 
-<div id="container" style="width: 400px;margin-left: 50px;margin-right: auto; border: 2px solid green;">
+
+<div id="container" style="width: 500px;margin-left: auto;margin-right: auto; border: 2px solid green;">
+    <div id="back" style=" width: 500px;margin-left: 0px;margin-bottom: 20px;">
+         <button onclick="window.location.href = '{% url "ifsearch:index" %}'"
+            style="border: 2px solid green; border-bottom: 4px solid green; width: 500px;height: 50px; line-height: 50px; font-size: 30px;">Back</button>
+    </div>
     <div id="inner" style="margin-left: 50px; margin-right: 50px">
     {% if info == 'success' %}
     <div><label>IF for Journal:</label><div style="margin-left: 10px;color: red;">{{ journal }}</div></div>
