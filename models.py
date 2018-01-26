@@ -4,8 +4,8 @@ from django.db import models
 
 
 class If(models.Model):
-    journal = models.CharField(max_length=100, blank=False)
-    iff = models.CharField(max_length=10, blank=False)
+    journal = models.CharField(max_length=200, blank=False)
+    iff = models.FloatField()
     year = models.CharField(max_length=4, blank=False)
 
     def __str__(self):

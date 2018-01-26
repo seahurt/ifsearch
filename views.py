@@ -17,7 +17,7 @@ def search(request):
         if len(querys)==0:
             core_words = journal.split()
             core_string = [x for x in core_words if x != 'the' and x != 'of']
-            querys = If.objects.filter(journal__icontains=' '.join(core_string),year__in=year).order_by('journal')
+            querys = If.objects.filter(journal__icontains=' '.join(core_string),year__in=year).order_by('-iff')
             context = {
                 'info': '{0} is not found, check the similar below'.format(journal.upper()),
                 'ifs': querys,
